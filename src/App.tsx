@@ -11,8 +11,8 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Buscar />} />
-      <Route path='/usuario' element={<Usuario />} />
+      <Route path='/' element={<Buscar/>} />
+      <Route path='/usuario/:username' element={<Usuario/>} />
     </Routes>
     </BrowserRouter>
     </>
