@@ -69,9 +69,13 @@ background: #1C203B;
     text-align: center;
     
     .descricao {
-      display: flex;
-      flex-wrap: wrap;
+      text-align: center;
+      width: 190px;
       margin-top: 10px;
+      white-space: wrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 100px;
     }
   }
 

@@ -43,11 +43,12 @@ const RepoAPI:React.FC = () => {
         </div>
       </ContainerPerfilUsuario>
     </ContainerUsuario>
+
     <ContainerRepositorios>
     <div> <h2> Repositórios</h2></div>
     <div className='box-repo'>
     <ul className='container-menor-repo'>
-      {repositorios.slice(0, 8).map(user => {
+      {repositorios.slice(16, 24).map(user => {
         return (
           <li className='caixa-repositorio' key={user.name}>
             <div>
