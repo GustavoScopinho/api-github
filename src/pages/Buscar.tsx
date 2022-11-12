@@ -1,8 +1,8 @@
 import React from 'react'
-import { UsuarioAPI } from '../components/UsuarioAPI/UsuarioAPI'
+import { BuscarUsuario } from '../components/Buscar/BuscarUsuario'
 
 export const Buscar:React.FC = () => {
   return (
-    <UsuarioAPI/>
+    <BuscarUsuario/>
   )
 }

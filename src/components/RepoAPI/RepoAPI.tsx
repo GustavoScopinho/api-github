@@ -1,7 +1,7 @@
 import react from 'react'
 import { useEffect, useState} from 'react'
 import axios from 'axios';
-import { ContainerPerfilUsuario, ContainerUsuario, ContainerRepositorios } from './RepoAPI.style'
+import { ContainerRepositorios } from './RepoAPI.style'
 
 interface Repositorio {
   name: string;
@@ -14,8 +14,8 @@ const nome_usuario = 'gustavoscopinho'  // colocar o valor da variavel q for dig
 const RepoAPI:React.FC = () => {
   // Token github
   let urlWeb = `https://api.github.com/users/${nome_usuario}/repos`;
-  let tokenStr = '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';
-  axios.get(urlWeb, { headers:  {tokenStr} } );
+  let token = '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';
+  axios.get(urlWeb, { headers:  {token} } );
 
   const [repositorios, setRepositorios] = useState<Repositorio[]>([])
   
@@ -28,22 +28,6 @@ const RepoAPI:React.FC = () => {
 
   return (
     <>
-    <ContainerUsuario>
-      <ContainerPerfilUsuario>
-        <div className='container-dados'>
-          <p>Nome:</p>
-          <h1>Nome do usuário</h1>
-          <p>Descrição do perfil</p>
-          <p>Localização</p>
-          <div> <p>XX Seguidores</p> <p>XX Seguindo</p></div>
-
-        </div>
-        <div className="container-foto-usuario">
-          Imagem
-        </div>
-      </ContainerPerfilUsuario>
-    </ContainerUsuario>
-
     <ContainerRepositorios>
     <div> <h2> Repositórios</h2></div>
     <div className='box-repo'>
