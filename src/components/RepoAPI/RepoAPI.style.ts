@@ -1,8 +1,4 @@
-
 import styled from "styled-components";
-
-
-
 
 export const ContainerRepositorios = styled.div`
 background: #1C203B;

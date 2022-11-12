@@ -1,35 +1,37 @@
 import styled from "styled-components";
 
 export const ContainerGeral = styled.div`
-background: #1C203B;
+background: var(--background-color);
 width: 100%;
 height: 100vh;
 display: flex;
-align-items: center;
 justify-content: center;
-
+color: var(--primary-color);
 `
 
 export const ContainerBusca = styled.div`
+margin: 90px auto;
 width: 600px;
-margin-top: -100px;
 
-`
-
-export const ContainerTexto = styled.div`
-h1{
-  color: #68E7E7;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 48px;
-}
 h2{
-  color: #fff;
   font-weight: 400;
   margin-bottom: 20px;
   text-align: center;
   font-size: 36px;
+  margin-top: 50px;
+  user-select: none;
 }
+`
+
+export const ContainerTexto = styled.div`
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 4rem;
+  user-select: none;
+}
+
 `
 
 export const ContainerPesquisar = styled.div`

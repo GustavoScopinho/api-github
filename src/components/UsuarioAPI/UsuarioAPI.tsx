@@ -2,12 +2,7 @@ import axios from "axios"
 import { useEffect, useState} from 'react'
 import { ContainerUsuario, ContainerPerfilUsuario} from './Usuario.style'
 
-
-
-
-
 export const UsuarioAPI:React.FC = () => {
-
 
   return (
     <>

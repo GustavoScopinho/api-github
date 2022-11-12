@@ -1,8 +1,12 @@
 import React from 'react'
+import { Menu } from '../components/Menu/Menu'
 import { BuscarUsuario } from '../components/Buscar/BuscarUsuario'
 
-export const Buscar:React.FC = () => {
+export const Buscar: React.FC = () => {
   return (
-    <BuscarUsuario/>
+    <>
+      <Menu />
+      <BuscarUsuario />
+    </>
   )
 }

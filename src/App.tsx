@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css'
 
-
 import { Buscar } from './pages/Buscar';
 import { Usuario } from './pages/Usuario';
 
@@ -12,12 +11,10 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Buscar/>} />
-      <Route path='/usuario' element={<Usuario/>} />
+      <Route path='/' element={<Buscar />} />
+      <Route path='/usuario' element={<Usuario />} />
     </Routes>
-    </BrowserRouter> 
-    
-     
+    </BrowserRouter>
     </>
   );
 }

@@ -1,7 +1,19 @@
+:root {
+  --background-color: #0D1117;
+  --primary-color: #C9D1D9;
+  --secondary-color: #21262D;
+  --border-primary-color: #30363D;
+  --border-secondary-color: #010409;
+  --detail-color: #BC82FF;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
