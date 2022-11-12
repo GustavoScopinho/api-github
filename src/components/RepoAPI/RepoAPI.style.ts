@@ -52,6 +52,7 @@ background: #1C203B;
   .container-menor-repo {
     display: flex;
     flex-wrap: wrap;
+    
   }
 
   .caixa-repositorio {
@@ -65,7 +66,13 @@ background: #1C203B;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-
+    text-align: center;
+    
+    .descricao {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
   }
 
 

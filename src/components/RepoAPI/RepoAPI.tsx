@@ -15,7 +15,7 @@ const RepoAPI:React.FC = () => {
   // Token github
   let urlWeb = `https://api.github.com/users/${nome_usuario}/repos`;
   let tokenStr = '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';
-  axios.get(urlWeb, { headers: {"Authorization" : `Bearer ${tokenStr}`} });
+  axios.get(urlWeb, { headers:  {tokenStr} } );
 
   const [repositorios, setRepositorios] = useState<Repositorio[]>([])
   
@@ -52,7 +52,7 @@ const RepoAPI:React.FC = () => {
           <li className='caixa-repositorio' key={user.name}>
             <div>
             <h5>{user.name}</h5>
-            <p>{user.description}</p>
+            <p className='descricao'>{user?.description ? user?.description : 'Repositório sem descrição.'} </p>
             </div>
             <div>
             <p className='linguagem'>{user.language}</p>
@@ -65,19 +65,6 @@ const RepoAPI:React.FC = () => {
     </div>
     </ContainerRepositorios>
 
-
-    <ul>
-      {repositorios.map(user => {
-        return (
-          <li key={user.name}>
-            <h5>{user.name}</h5>
-            <p>{user.description}</p>
-            <p>{user.language}</p>
-            
-          </li>
-        )
-      })}
-    </ul>
     </>
   )
 }
