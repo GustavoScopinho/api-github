@@ -8,7 +8,7 @@ interface Repositorio {
   name: string;
   description: string;
   language: string;
-
+  url: string;
 }
 
 const api = {
@@ -22,10 +22,11 @@ const RepoAPI:React.FC = () => {
   const [repositorios, setRepositorios] = useState<Repositorio[]>([])
 
   const {username} = useParams()
-  console.log(username)
+  
  const buscarRepositorios = async () => {
   const {data} = await axios.get(`${api.baseUrl}${username}/repos?client_id=${api.clientId}?client_secret=${api.clientSecret}`)
   setRepositorios(data)
+  console.log(data)
  }
 
  useEffect(() => {

@@ -24,7 +24,7 @@ export const UsuarioAPI:React.FC = () => {
 
   const [ usuarios, setUsuarios] = useState<Usuario>()
   const {username} = useParams()
-  console.log(username)
+  
  const buscarUsuario = async () => {
   const {data} = await axios.get(`${api.baseUrl}${username}?client_id=${api.clientId}?client_secret=${api.clientSecret}`)
   setUsuarios(data)
@@ -32,6 +32,7 @@ export const UsuarioAPI:React.FC = () => {
 
  useEffect(() => {
 buscarUsuario()
+
  },[])
 
   return (
@@ -42,8 +43,8 @@ buscarUsuario()
         <div className='container-dados'>
           <p>Nome:</p>
           <h1>{usuarios?.name}</h1>
-          <p>{usuarios?.bio}</p>
-          <p>{usuarios?.location}</p>
+          <p>{usuarios?.bio? usuarios.bio : 'Biografia não encontrada'}</p>
+          <p>{usuarios?.location ? usuarios?.location : 'Localização não encontrada'}</p>
           <div> <p>{usuarios?.followers} Seguidores</p> <p>{usuarios?.following} Seguindo</p></div>
 
         </div>
