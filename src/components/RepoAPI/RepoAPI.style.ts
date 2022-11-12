@@ -67,4 +67,6 @@ background: #1C203B;
     align-items: center;
 
   }
+
+
 `

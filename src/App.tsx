@@ -1,17 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
+
 import './App.css'
-import  RepoAPI  from './components/RepoAPI/RepoAPI';
-import { UsuarioAPI } from './components/UsuarioAPI/UsuarioAPI';
+
+
+import { Buscar } from './pages/Buscar';
+import { Usuario } from './pages/Usuario';
 
 function App() {
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<UsuarioAPI/>} />
-      <Route path='/RepoAPI' element={<RepoAPI/>} />
+      <Route path='/' element={<Buscar/>} />
+      <Route path='/Usuario' element={<Usuario/>} />
     </Routes>
     </BrowserRouter> 
     

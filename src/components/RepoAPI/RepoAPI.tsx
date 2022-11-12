@@ -11,7 +11,7 @@ interface Repositorio {
 }
 
 const nome_usuario = 'gustavoscopinho'  // colocar o valor da variavel q for digitada
-const RepoAPI = () => {
+const RepoAPI:React.FC = () => {
   // Token github
   let urlWeb = `https://api.github.com/users/${nome_usuario}/repos`;
   let tokenStr = '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';
