@@ -31,7 +31,7 @@ const repositorioAPI = {
 }
 
 const userAPI = {
-  baseUrl: 'https://user.github.com/users/',
+  baseUrl: 'https://api.github.com/users/',
   clientId: '71a06d13a50934b40060',
   clientSecret: 'd1a974fde9b5329a942a865eb89a3f4a97264fce'
 }
@@ -43,13 +43,11 @@ export const UsuarioPage = () => {
 
   const buscarRepositorios = async () => {
     const { data } = await axios.get(`${repositorioAPI.baseUrl}${username}/repos?client_id=${repositorioAPI.clientId}?client_secret=${repositorioAPI.clientSecret}`)
-    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     setRepositorios(data)
   }
 
   const buscarUsuario = async () => {
     const { data } = await axios.get(`${userAPI.baseUrl}${username}?client_id=${userAPI.clientId}?client_secret=${userAPI.clientSecret}`)
-    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     setUsuarios(data)
   }
 
@@ -57,21 +55,17 @@ export const UsuarioPage = () => {
     buscarUsuario()
     buscarRepositorios()
   }, [])
-  
-  if(usuarios && repositorios) {
-    return (
-      <>
-        <Menu />
-        <UsuarioAPI usuarios={usuarios} />
-        <RepoAPI repositorios={repositorios} />
-      </>
-    )
-  } else {
-    return (
-      <>
-      <Menu />
-      <Loading />
-      </>
-    )
-  }
+
+  return (
+    <div>
+      {(usuarios && repositorios) ?
+        (<>
+          <Menu />
+          <UsuarioAPI usuarios={usuarios} />
+          <RepoAPI repositorios={repositorios} />
+        </>) : (<>
+          <Menu />
+          <Loading />
+        </>)}
+    </div>)
 }

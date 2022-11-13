@@ -9,15 +9,16 @@ export const RepoAPI: React.FC | any = ({ repositorios }: any) => {
           Repositórios
         </TituloRepositorios>
         <ContainerRepositorios>
-          <div className='box-repo'>
-            {repositorios.slice(0, 8).map((user: any) => {
-              return (
-                <div className='caixa-repositorio' key={user.name}>
+          {repositorios.slice(0, 8).map((user: any) => {
+            return (
+              <div className='box-repo' key={user.name}>
+                <a href={user.html_url} target="_blank" rel="noreferrer">
+                <div className='caixa-repositorio'>
                   <div className='repo-icons'>
                     <BsGithub />
                     <BsFillFolderSymlinkFill />
                   </div>
-                  <div>
+                  <div className='titulo'>
                     <h5>{user.name}</h5>
                   </div>
                   <div>
@@ -27,9 +28,10 @@ export const RepoAPI: React.FC | any = ({ repositorios }: any) => {
                     <p className='linguagem'>{user.language}</p>
                   </div>
                 </div>
-              )
-            })}
-          </div>
+                </a>
+              </div>
+            )
+          })}
         </ContainerRepositorios>
       </ContainerRepo>
     </>

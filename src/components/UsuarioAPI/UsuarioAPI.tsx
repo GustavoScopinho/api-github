@@ -1,5 +1,5 @@
 import { ContainerUsuario, ContainerPerfilUsuario } from './Usuario.styled'
-import { BsRecordFill, BsPersonFill, BsPeopleFill, BsGeoAltFill } from "react-icons/bs";
+import { BsRecordFill, BsPersonFill, BsPeopleFill, BsGeoAltFill, BsFileEarmarkTextFill } from "react-icons/bs";
 import { IconContext } from 'react-icons';
 
 export const UsuarioAPI: React.FC | any = ({ usuarios }: any) => {
@@ -16,7 +16,7 @@ export const UsuarioAPI: React.FC | any = ({ usuarios }: any) => {
               <h4>{usuarios?.name ? usuarios?.name : 'Sem nome definido'}</h4>
             </div>
             <div className="container-info">
-              <i className="bio-container"><IconContext.Provider value={{ className: "shared-class", size: '20' }}><BsPeopleFill /></IconContext.Provider></i>
+              <i className="bio-container"><IconContext.Provider value={{ className: "shared-class", size: '20' }}><BsFileEarmarkTextFill /></IconContext.Provider></i>
               <p>{usuarios?.bio ? usuarios.bio : 'Sem descrição definida'}</p>
             </div>
             <div className="container-info">
