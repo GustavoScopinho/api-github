@@ -54,12 +54,9 @@ export const Usuario = () => {
 
   useEffect(() => {
     buscarUsuario()
-  }, [])
-
-  useEffect(() => {
     buscarRepositorios()
   }, [])
-
+  
   if(usuarios && repositorios) {
     return (
       <>

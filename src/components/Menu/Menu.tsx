@@ -1,5 +1,5 @@
 import { MenuContainer } from "./Menu.styled";
-import { BsGithub, BsFileEarmarkCodeFill } from "react-icons/bs";
+import { BsGithub, BsCodeSquare } from "react-icons/bs";
 import { Link } from "react-router-dom"
 
 export const Menu = () => {
@@ -14,7 +14,7 @@ export const Menu = () => {
                 </div>
                 <div>
                     <a target='_blank' href="https://github.com/GustavoScopinho/api-github">
-                        <BsFileEarmarkCodeFill />
+                        <BsCodeSquare />
                         <p>GitHub</p>
                     </a>
                 </div>

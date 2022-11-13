@@ -13,7 +13,8 @@ flex-direction: column;
 z-index: 2;
 
 h1 {
-    margin-top: 10px;
+    margin-top: -50px;
+    font-weight: 600;
     user-select: none;
 }
 
