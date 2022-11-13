@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams, Navigate, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { Menu } from '../components/Menu/Menu';
 import { RepoAPI } from '../components/RepoAPI/RepoAPI';
 import { UsuarioAPI } from '../components/UsuarioAPI/UsuarioAPI';
 import { Loading } from '../components/Loading/Loading';
+import { Erro } from "../components/Erro/Erro";
 
 interface Usuario {
   name: string;
@@ -40,15 +41,24 @@ export const UsuarioPage = () => {
   const [repositorios, setRepositorios] = useState<Repositorio[]>([])
   const [usuarios, setUsuarios] = useState<Usuario | null>(null)
   const { username } = useParams()
+  const navigate = useNavigate();
 
   const buscarRepositorios = async () => {
+    try {
     const { data } = await axios.get(`${repositorioAPI.baseUrl}${username}/repos?client_id=${repositorioAPI.clientId}?client_secret=${repositorioAPI.clientSecret}`)
-    setRepositorios(data)
+    setRepositorios(data) 
+    } catch {
+      return navigate("/usuario-nao-encontrado")
+    }
   }
 
   const buscarUsuario = async () => {
+    try {
     const { data } = await axios.get(`${userAPI.baseUrl}${username}?client_id=${userAPI.clientId}?client_secret=${userAPI.clientSecret}`)
     setUsuarios(data)
+    } catch {
+      return navigate("/usuario-nao-encontrado")
+    }
   }
 
   useEffect(() => {
