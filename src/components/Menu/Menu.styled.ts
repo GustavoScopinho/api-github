@@ -7,8 +7,8 @@ export const MenuContainer = styled.div`
     height: 50px;
     display: flex;
     justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
     padding-top: 30px;
     font-size: 1.1rem;
 

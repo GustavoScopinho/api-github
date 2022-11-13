@@ -1,13 +1,44 @@
 import axios from "axios"
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useParams, Link } from "react-router-dom"
-import { ContainerBusca, ContainerTexto, ContainerPesquisar, ContainerGeral } from "./Buscar.style"
+import { ContainerBusca, ContainerTexto, ContainerPesquisar, ContainerGeral, ButtonSC } from "./Buscar.style"
+import lottie from 'lottie-web';
+import { BsSearch } from "react-icons/bs";
+import { IconContext } from 'react-icons';
 
+interface ButtonProps {
+  bg?: 'default' | 'active';
+  children?: any;
+}
 
-export const BuscarUsuario:React.FC = () => {
+export const Button: React.FC<ButtonProps> = ({ bg = 'default' }) => {
+  return (
+    <ButtonSC bg={bg}>
+      <i><IconContext.Provider value={{ className: "shared-class", size: '24' }}>
+        <BsSearch />
+      </IconContext.Provider></i>
+    </ButtonSC>
+  )
+}
 
-  const [usuarios, setUsuarios] = useState('')
+export const BuscarUsuario: React.FC = () => {
+  const container: any = useRef(null);
+  const [usuarios, setUsuarios] = useState('');
+  const [inputFocus, setInputFocus] = useState<any>('default');
 
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../../json/github.json')
+    })
+  }, [])
+
+  function handleInputFocus() {
+    inputFocus == 'default' ? setInputFocus('active') : setInputFocus('default')  
+  }
 
   return (
     <>
@@ -16,15 +47,14 @@ export const BuscarUsuario:React.FC = () => {
           <ContainerTexto>
             <h1>GitStats</h1>
           </ContainerTexto>
-          <iframe src="https://lottie.host/?file=85748a8a-782c-47b8-9821-ba2022e0281e/2hRENtiwvm.json"></iframe>
+          <div className="container" ref={container}></div>
           <ContainerPesquisar>
-          <input type="text" onChange={(e) => setUsuarios(e.target.value)} placeholder="username"  id="" />
-          <Link to={`/usuario/${usuarios}`}><button>Enviar</button></Link>
-          
+            <input type="text" onBlur={handleInputFocus} onFocus={handleInputFocus} onChange={(e) => setUsuarios(e.target.value)} placeholder="username" id="" />
+            <Link to={`/usuario/${usuarios}`}>
+              <Button bg={inputFocus}></Button>
+            </Link>
           </ContainerPesquisar>
-            <h2>Digite seu nome de usuário
-              e veja informações sobre seu
-              perfil e seus repositórios!</h2>
+          <h2>Digite seu nome de usuário e veja informações sobre seu perfil e seus repositórios!</h2>
         </ContainerBusca>
       </ContainerGeral>
     </>

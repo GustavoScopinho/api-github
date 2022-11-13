@@ -1,31 +1,56 @@
 import styled from "styled-components";
 
 export const ContainerUsuario = styled.div`
-background: #1C203B;
-width: 100%;
-height: 400px;
 display: flex;
-align-items: center;
-justify-content: center;
+margin-bottom: 30px;
 `
 
 export const ContainerPerfilUsuario = styled.div`
 display: flex;
-
-p {
-color: #fff;
-}
-h1{
-color: 
-#68E7E7;
-}
-
-.container-dados>div {
-display: flex;
-
-p {
-  margin-right: 25px
-}
-}
-
+align-items: center;
+gap: 70px;
+margin: 90px auto;
+color: var(--primary-color);
+padding-left: 5px;
+  i {
+    color: #78828e;
+  }
+  h1 {
+    color: var(--detail-color);
+    font-size: 3.5rem;
+    font-weight: 600;
+    user-select: none;
+    margin-left: -5px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-weight: 600;
+  }
+  .container-dados {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 15px;
+      .container-info {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+      .bio-container {
+        align-self: flex-start;
+      }
+      span {
+        font-weight: 600;
+      }
+    }
+  .container-foto-usuario {
+    width: 300px;
+    height: 300px;
+    img {      
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 3px solid var(--border-secondary-color);
+    }
+  }
 `

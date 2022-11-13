@@ -1,28 +1,19 @@
 import styled from "styled-components";
 
 export const ContainerRepositorios = styled.div`
-background: #1C203B;
-  width: 100%;
-  height: 400vh;
-  color: #fff;
+  color: var(--primary-color);
   display: flex;
- 
   flex-direction: column;
   align-items: center;
-
   .box-repo {
     display: flex;
     justify-content: center;
     width: 1000px;
-   
   }
-
   .container-menor-repo {
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;    
   }
-
   .caixa-repositorio {
     width: 200px;
     height: 200px;
@@ -34,8 +25,7 @@ background: #1C203B;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    
+    text-align: center;    
     .descricao {
       text-align: center;
       width: 190px;
@@ -46,6 +36,4 @@ background: #1C203B;
       height: 100px;
     }
   }
-
-
 `
