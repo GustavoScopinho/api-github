@@ -36,7 +36,7 @@ export const BuscarUsuario: React.FC = () => {
   }, [])
 
   function handleInputFocus() {
-    inputFocus === 'default' ? setInputFocus('active') : setInputFocus('default')  
+    inputFocus === 'default' ? setInputFocus('active') : setInputFocus('default')
   }
 
   return (
@@ -44,14 +44,14 @@ export const BuscarUsuario: React.FC = () => {
       <ContainerGeral>
         <ContainerBusca>
           <ContainerTexto>
-            <h1>GitStats</h1>
+            <h1 role="heading">GitStats</h1>
           </ContainerTexto>
           <div className="container" ref={container}></div>
           <ContainerPesquisar>
             <input type="text" onBlur={handleInputFocus} onFocus={handleInputFocus} onChange={(e) => setUsuarios(e.target.value)} placeholder="username" id="" />
-            <Link to={`/usuario/${usuarios}`}>
+            {usuarios ? <Link to={`/usuario/${usuarios}`}>
               <Button bg={inputFocus}></Button>
-            </Link>
+            </Link> : <Button bg={inputFocus}></Button> }
           </ContainerPesquisar>
           <h2>Digite seu nome de usuário e veja informações sobre seu perfil e seus repositórios!</h2>
         </ContainerBusca>

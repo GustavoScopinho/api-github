@@ -6,6 +6,9 @@ height: 100vh;
 display: flex;
 justify-content: center;
 color: var(--primary-color);
+.disabled {
+  pointer-events: none;
+}
 `
 
 export const ContainerBusca = styled.div`
@@ -16,6 +19,7 @@ h2 {
   text-align: center;
   font-size: 1.8rem;
   margin-top: 50px;
+  margin-bottom: 30px;
   user-select: none;
 }
 .container {

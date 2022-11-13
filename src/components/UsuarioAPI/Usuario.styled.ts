@@ -12,6 +12,9 @@ gap: 70px;
 margin: 90px auto;
 color: var(--primary-color);
 padding-left: 5px;
+  @media screen and (max-width: 790px) {
+    flex-direction: column;
+  }
   i {
     color: #78828e;
   }

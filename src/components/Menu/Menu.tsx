@@ -7,13 +7,13 @@ export const Menu = () => {
         <>
             <MenuContainer>
                 <div>
-                    <Link to={`/`}>
+                    <Link title="Página inicial" to={`/`}>
                         <BsGithub />
                         <p>GitStats</p>
                     </Link>
                 </div>
                 <div>
-                    <a target="_blank" rel="noreferrer" href="https://github.com/GustavoScopinho/api-github">
+                    <a target="_blank" rel="noreferrer" title="Repositório do projeto" href="https://github.com/GustavoScopinho/api-github">
                         <BsCodeSquare />
                         <p>GitHub</p>
                     </a>
