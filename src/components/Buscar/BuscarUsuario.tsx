@@ -1,7 +1,6 @@
-import axios from "axios"
 import { useEffect, useState, useRef } from 'react'
-import { useParams, Link } from "react-router-dom"
-import { ContainerBusca, ContainerTexto, ContainerPesquisar, ContainerGeral, ButtonSC } from "./Buscar.style"
+import { Link } from "react-router-dom"
+import { ContainerBusca, ContainerTexto, ContainerPesquisar, ContainerGeral, ButtonSC } from "./Buscar.styled"
 import lottie from 'lottie-web';
 import { BsSearch } from "react-icons/bs";
 import { IconContext } from 'react-icons';
@@ -37,7 +36,7 @@ export const BuscarUsuario: React.FC = () => {
   }, [])
 
   function handleInputFocus() {
-    inputFocus == 'default' ? setInputFocus('active') : setInputFocus('default')  
+    inputFocus === 'default' ? setInputFocus('active') : setInputFocus('default')  
   }
 
   return (

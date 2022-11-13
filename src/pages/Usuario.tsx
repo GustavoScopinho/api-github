@@ -1,4 +1,3 @@
-import React from 'react';
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
@@ -37,18 +36,20 @@ const userAPI = {
   clientSecret: 'd1a974fde9b5329a942a865eb89a3f4a97264fce'
 }
 
-export const Usuario = () => {
+export const UsuarioPage = () => {
   const [repositorios, setRepositorios] = useState<Repositorio[]>([])
   const [usuarios, setUsuarios] = useState<Usuario | null>(null)
   const { username } = useParams()
 
   const buscarRepositorios = async () => {
     const { data } = await axios.get(`${repositorioAPI.baseUrl}${username}/repos?client_id=${repositorioAPI.clientId}?client_secret=${repositorioAPI.clientSecret}`)
+    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     setRepositorios(data)
   }
 
   const buscarUsuario = async () => {
     const { data } = await axios.get(`${userAPI.baseUrl}${username}?client_id=${userAPI.clientId}?client_secret=${userAPI.clientSecret}`)
+    axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
     setUsuarios(data)
   }
 

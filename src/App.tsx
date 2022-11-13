@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 import { Buscar } from './pages/Buscar';
-import { Usuario } from './pages/Usuario';
+import { UsuarioPage } from './pages/Usuario';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Buscar/>} />
-      <Route path='/usuario/:username' element={<Usuario/>} />
+      <Route path='/usuario/:username' element={<UsuarioPage />} />
     </Routes>
     </BrowserRouter>
     </>

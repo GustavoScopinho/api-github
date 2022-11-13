@@ -13,7 +13,7 @@ export const Menu = () => {
                     </Link>
                 </div>
                 <div>
-                    <a target='_blank' href="https://github.com/GustavoScopinho/api-github">
+                    <a target="_blank" rel="noreferrer" href="https://github.com/GustavoScopinho/api-github">
                         <BsCodeSquare />
                         <p>GitHub</p>
                     </a>

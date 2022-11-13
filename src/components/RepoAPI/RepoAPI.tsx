@@ -1,5 +1,4 @@
-import react from 'react';
-import { ContainerRepo, ContainerRepositorios, TituloRepositorios } from './RepoAPI.style';
+import { ContainerRepo, ContainerRepositorios, TituloRepositorios } from './RepoAPI.styled';
 import { BsGithub, BsFillFolderSymlinkFill } from "react-icons/bs";
 
 export const RepoAPI: React.FC | any = ({ repositorios }: any) => {

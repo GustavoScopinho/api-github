@@ -1,5 +1,4 @@
-import axios from "axios"
-import { ContainerUsuario, ContainerPerfilUsuario } from './Usuario.style'
+import { ContainerUsuario, ContainerPerfilUsuario } from './Usuario.styled'
 import { BsRecordFill, BsPersonFill, BsPeopleFill, BsGeoAltFill } from "react-icons/bs";
 import { IconContext } from 'react-icons';
 
@@ -9,7 +8,7 @@ export const UsuarioAPI: React.FC | any = ({ usuarios }: any) => {
       <ContainerUsuario>
         <ContainerPerfilUsuario>
           <div className='container-dados'>
-            <a target="_blank" href={usuarios?.html_url}>
+            <a target="_blank" rel="noreferrer" href={usuarios?.html_url}>
               <h1>{usuarios?.login}</h1>
             </a>
             <div className="container-info">
@@ -31,9 +30,9 @@ export const UsuarioAPI: React.FC | any = ({ usuarios }: any) => {
               <p><span>{usuarios?.following}</span> Seguindo</p>
             </div>
           </div>
-          <a target="_blank" href={usuarios?.html_url}>
+          <a target="_blank" rel="noreferrer" href={usuarios?.html_url}>
             <div className="container-foto-usuario">
-              <img src={usuarios?.avatar_url} alt="Foto de ${usuarios?.name}" />
+              <img src={usuarios?.avatar_url} alt={`Foto de ${usuarios?.name}`} />
             </div>
           </a>
         </ContainerPerfilUsuario>
