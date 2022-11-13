@@ -1,11 +1,10 @@
 import axios from "axios";
-import { Link, useParams, Navigate, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { Menu } from '../components/Menu/Menu';
 import { RepoAPI } from '../components/RepoAPI/RepoAPI';
 import { UsuarioAPI } from '../components/UsuarioAPI/UsuarioAPI';
 import { Loading } from '../components/Loading/Loading';
-import { Erro } from "../components/Erro/Erro";
 
 interface Usuario {
   name: string;
