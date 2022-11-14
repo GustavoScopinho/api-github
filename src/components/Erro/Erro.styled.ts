@@ -13,6 +13,9 @@ export const ErroContainer = styled.div`
     width: 450px;
     height: auto;
     margin: 0 auto;
+    @media screen and (max-width: 790px) {
+    width: 250px;
+    }
     }
     h1 {
         font-weight: 600;

@@ -45,6 +45,10 @@ padding-left: 5px;
       span {
         font-weight: 600;
       }
+      @media screen and (max-width: 790px) {
+        width: 80%;
+        align-items: center;
+      }
     }
   .container-foto-usuario {
     width: 300px;
@@ -58,6 +62,14 @@ padding-left: 5px;
       &:hover {
         transition: 0.8s;
         box-shadow: 0px 0px 5px rgb(188, 130, 255, 0.50);
+      }
+    }
+    @media screen and (max-width: 790px) {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 250px;
+        height: 250px;
       }
     }
   }

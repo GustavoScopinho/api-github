@@ -11,6 +11,11 @@ color: var(--primary-color);
 export const ContainerBusca = styled.div`
 margin: 90px auto;
 width: 600px;
+@media screen and (max-width: 790px) {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 h2 {
   font-weight: 400;
   text-align: center;
@@ -56,6 +61,9 @@ input {
   border-radius: 6px;
   padding: 0 15px;
   transition: 1s;
+  @media screen and (max-width: 790px) {
+    width: 250px;
+  }
   ::placeholder {
     color: #6b6f73;
   }
