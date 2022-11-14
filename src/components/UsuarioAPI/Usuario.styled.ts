@@ -25,6 +25,13 @@ padding-left: 5px;
     user-select: none;
     margin-left: -5px;
     margin-bottom: 10px;
+    @media screen and (max-width: 790px) {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2.3rem;
+    width: 100%;
+    margin-left: 0px;
+    }
   }
   h4 {
     font-weight: 600;
@@ -48,6 +55,7 @@ padding-left: 5px;
       @media screen and (max-width: 790px) {
         width: 80%;
         align-items: center;
+        text-align: center;
       }
     }
   .container-foto-usuario {
