@@ -56,6 +56,9 @@ padding-left: 5px;
         width: 80%;
         align-items: center;
         text-align: center;
+        .bio-container {
+          align-self: center;
+        }
       }
     }
   .container-foto-usuario {
